@@ -9,12 +9,12 @@ import { emailValidator, nameValidator, workExperienceValidator } from './valida
 })
 export class TestFormComponent implements OnInit {
 
-  constructor() {}
-  ngOnInit(): void {}
   showError: boolean = false;
   errorInfo: boolean = false;
   successInfo: boolean = false;
   resetInfo: boolean = false;
+  constructor() {}
+  ngOnInit(){}
 
   textColor: string = 'white'
 
@@ -39,32 +39,34 @@ export class TestFormComponent implements OnInit {
       validators: [workExperienceValidator('Work Experience', 1)],
       // updateOn: 'blur',
     }),
-  })
+  },
+  // {updateOn: 'blur'}
+  )
 
 
   onSubmit() {
     this.showError = true
 
-    // console.warn(this.profileForm.value)
-    // console.log(this.profileForm.controls);
+    console.warn(this.profileForm.value)
+    console.log(this.profileForm.controls);
 
     if (!this.profileForm.valid) {
       this.errorInfo = true
       this.resetInfo = false
       this.successInfo = false
     } else {
-      this.successInfo = true
       this.errorInfo = false
       this.resetInfo = false
+      this.successInfo = true
     }
   }
   onReset() {
     this.profileForm.reset()
+    this.showError = false
     // console.warn(this.profileForm.value)
     // console.log(this.profileForm.controls);
-    this.showError = false
     this.errorInfo = false
-    this.successInfo = false
     this.resetInfo = true
+    this.successInfo = false
   }
 }
