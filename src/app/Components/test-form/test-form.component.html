@@ -1,0 +1,52 @@
+<info-message
+  [errorInfo]="errorInfo"
+  [successInfo]="successInfo"
+  [resetInfo]="resetInfo"
+  ></info-message>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+  <label for="name">Name: </label>
+  <br>
+  <input id="name" type="text" formControlName="name">
+  <br>
+  <common-error-display
+    [error]="profileForm.get('name')?.errors"
+    [showError]="showError"
+  ></common-error-display>
+
+  <label for="surname">Surname: </label>
+  <br>
+  <input id="surname" type="text" formControlName="surname">
+  <br>
+  <common-error-display
+  [error]="profileForm.get('surname')?.errors"
+  [showError]="showError"
+  ></common-error-display>
+
+  <label for="email">Email: </label>
+  <br>
+  <input id="email" type="email" formControlName="email">
+  <br>
+  <common-error-display
+  [error]="profileForm.get('email')?.errors"
+  [showError]="showError"
+  ></common-error-display>
+
+  <label for="workExperience">Work Experience: </label>
+  <br>
+  <input id="workExperience" type="text" formControlName="workExperience">
+  <br>
+  <common-error-display
+  [error]="profileForm.get('workExperience')?.errors"
+  [showError]="showError"
+  ></common-error-display>
+
+  <br>
+  <button type="submit">Submit</button>
+  <button (click)="onReset()" type="button" value="reset">Reset</button>
+
+</form>
+
+
+
