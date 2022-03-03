@@ -47,8 +47,8 @@ export class TestFormComponent implements OnInit {
   onSubmit() {
     this.showError = true
 
-    console.warn(this.profileForm.value)
-    console.log(this.profileForm.controls);
+    // console.warn(this.profileForm.value)
+    // console.log(this.profileForm.controls);
 
     if (!this.profileForm.valid) {
       this.errorInfo = true
@@ -62,8 +62,8 @@ export class TestFormComponent implements OnInit {
   }
   onReset() {
     this.profileForm.reset()
-    console.warn(this.profileForm.value)
-    console.log(this.profileForm.controls);
+    // console.warn(this.profileForm.value)
+    // console.log(this.profileForm.controls);
     this.showError = false
     this.errorInfo = false
     this.successInfo = false
