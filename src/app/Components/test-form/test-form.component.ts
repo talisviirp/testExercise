@@ -16,6 +16,14 @@ export class TestFormComponent implements OnInit {
   successInfo: boolean = false;
   resetInfo: boolean = false;
 
+  textColor: string = 'white'
+
+  success = '#4caf50'
+
+  error = '#e53935'
+
+  info = '#2196f3'
+
   public profileForm = new FormGroup({
     name: new FormControl('', {
       validators: [nameValidator('Name', 3, 20)],

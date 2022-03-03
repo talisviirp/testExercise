@@ -1,8 +1,7 @@
-<info-message
-  [errorInfo]="errorInfo"
-  [successInfo]="successInfo"
-  [resetInfo]="resetInfo"
-  ></info-message>
+<info-message *ngIf="successInfo" [text]="'Form Successful'" [type]="success"></info-message>
+<info-message *ngIf="errorInfo" [text]="'Form not valid'" [type]="error"></info-message>
+<info-message *ngIf="resetInfo" [text]="'Form cleared'" [type]="info"></info-message>
+
 
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 

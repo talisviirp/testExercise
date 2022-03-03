@@ -13,10 +13,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class InfoMessageComponent implements OnInit {
 
   constructor() { }
-  @Input('errorInfo') errorInfo: boolean | undefined
-  @Input('successInfo') successInfo: boolean | undefined
-  @Input('resetInfo') resetInfo: boolean | undefined
+  // @Input('errorInfo') errorInfo: boolean | undefined
+  // @Input('successInfo') successInfo: boolean | undefined
+  // @Input('resetInfo') resetInfo: boolean | undefined
 
+  @Input() text: any
+  @Input() type: any
+  @Input() color: any
 
   ngOnInit(): void {
   }
