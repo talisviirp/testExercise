@@ -19,9 +19,7 @@ export class TestFormComponent implements OnInit {
   textColor: string = 'white'
 
   success = '#4caf50'
-
   error = '#e53935'
-
   info = '#2196f3'
 
   public profileForm = new FormGroup({
